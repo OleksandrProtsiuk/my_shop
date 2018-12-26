@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @stuff.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @stuff.price %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @stuff.short_description %>
+</p>
+
+<p>
+  <strong>Full description:</strong>
+  <%= @stuff.full_description %>
+</p>
+
+<p>
+  <strong>Preview image:</strong>
+  <%= @stuff.preview_image %>
+</p>
+
+<p>
+  <strong>In stock:</strong>
+  <%= @stuff.in_stock %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @stuff.slug %>
+</p>
+
+<%= link_to 'Edit', edit_stuff_path(@stuff) %> |
+<%= link_to 'Back', stuffs_path %>
