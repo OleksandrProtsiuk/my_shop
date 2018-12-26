@@ -1,0 +1,42 @@
+<h1>StaticPages#home</h1>
+<p>Find me in app/views/static_pages/home.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Stuffs</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Short description</th>
+    <th>Full description</th>
+    <th>Preview image</th>
+    <th>In stock</th>
+    <th>Slug</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @stuffs.each do |stuff| %>
+    <tr>
+      <td><%= stuff.title %></td>
+      <td><%= stuff.price %></td>
+      <td><%= stuff.short_description %></td>
+      <td><%= stuff.full_description %></td>
+      <td><%= stuff.preview_image %></td>
+      <td><%= stuff.in_stock %></td>
+      <td><%= stuff.slug %></td>
+      <td><%= link_to 'Show', stuff %></td>
+      <td><%= link_to 'Edit', edit_stuff_path(stuff) %></td>
+      <td><%= link_to 'Destroy', stuff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stuff', new_stuff_path %>
