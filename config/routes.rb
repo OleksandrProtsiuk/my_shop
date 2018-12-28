@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   root 'static_pages#home', as: 'root'
 
   get 'payment', to: 'static_pages#payment', as: 'payment'
