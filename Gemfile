@@ -6,6 +6,7 @@ ruby '2.5.1'
 # Gems added manually -------
 gem 'bootstrap', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'acts-as-taggable-on', '~> 6.0'
 # ---------------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
