@@ -1,5 +1,3 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
 
 <p id="notice"><%= notice %></p>
 
@@ -8,13 +6,12 @@
   <% @stuffs.each do |stuff| %>
     <div class="card" style="width: 18rem;">
       <div align="center">
-        <%= image_tag(stuff.preview_image, width: 250) %>
+        <%= link_to image_tag(stuff.preview_image, width: 250), stuff %>
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= stuff.title %></h5>
         <p class="card-text"><%= stuff.short_description %></p>
-        <p class="card-text"><%= stuff.price %></p>
-        <%= link_to 'Подробнее', stuff %>
+        <p class="card-text"><%= stuff.price %> UAH</p>
       </div>
     </div>
   <% end %>
