@@ -7,7 +7,9 @@
   <div class="row">
   <% @stuffs.each do |stuff| %>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+      <div align="center">
+        <%= image_tag(stuff.preview_image, width: 250) %>
+      </div>
       <div class="card-body">
         <h5 class="card-title"><%= stuff.title %></h5>
         <p class="card-text"><%= stuff.short_description %></p>

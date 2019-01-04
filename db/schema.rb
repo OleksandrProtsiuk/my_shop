@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_12_29_212361) do
     t.decimal "price"
     t.text "short_description"
     t.text "full_description"
-    t.integer "preview_image"
+    t.text "preview_image"
     t.boolean "in_stock"
     t.string "slug"
     t.datetime "created_at", null: false
