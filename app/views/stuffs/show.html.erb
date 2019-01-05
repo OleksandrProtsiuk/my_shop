@@ -7,7 +7,11 @@
   <div class="col-6">
     <h3 class="h"><%= @stuff.title %></h3>
     <br>
-    <p class="price"><span class="discount text-muted">1000 UAH</span>  <%= @stuff.price %> UAH</p><br>
+    <p class="price">
+      <% if @stuff.old_price %>
+       <span class="discount text-muted"><%= @stuff.old_price %> UAH</span>
+      <% end %>
+      <%= @stuff.price %> UAH</p><br>
     <% if @stuff.in_stock %>
       <p class="in-stock">Есть в наличии / <%= link_to 'Добавить в корзину', root_path, { :class => 'in-stock' } %></p>
       <% else %>
