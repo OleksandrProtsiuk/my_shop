@@ -8,7 +8,6 @@
       <th>Title</th>
       <th>Price</th>
       <th>Short description</th>
-      <th>Full description</th>
       <th>Preview image</th>
       <th>In stock</th>
       <th>Slug</th>
@@ -22,7 +21,6 @@
         <td><%= stuff.title %></td>
         <td><%= stuff.price %></td>
         <td><%= stuff.short_description %></td>
-        <td><%= stuff.full_description %></td>
         <td><%= stuff.preview_image %></td>
         <td><%= stuff.in_stock %></td>
         <td><%= stuff.slug %></td>
@@ -33,7 +31,6 @@
     <% end %>
   </tbody>
 </table>
+<hr>
 
-<br>
-
-<%= link_to 'New Stuff', new_stuff_path %>
+<%= link_to 'Add New Stuff', new_stuff_path %>

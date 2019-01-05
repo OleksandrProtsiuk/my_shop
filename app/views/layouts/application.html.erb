@@ -12,8 +12,16 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <div class="container">
-      <%= yield %>
+    <div class="row">
+      <div class="col-3">
+          <%= render 'layouts/sidebar' %>
+      </div>
+
+      <div class="col-9" id="root">
+          <%= yield %>
+      </div>
+
+      <div class="col-8" id="results" hidden></div>
     </div>
 
   </body>

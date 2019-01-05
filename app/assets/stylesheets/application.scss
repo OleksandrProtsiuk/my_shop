@@ -14,8 +14,56 @@
  */
 @import "bootstrap";
 
+@font-face {
+  font-family: UbuntuMono-Bold;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+
+  font-family: UbuntuMono-Regular;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf');
+};
+
+.shop{
+  font-family: UbuntuMono-Bold;
+  font-size: 150px;
+  color: whitesmoke;
+}
+
+.link{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.mb-0{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.h{
+  font-family: UbuntuMono-Regular;
+  text-decoration-color: #343a40;
+}
+
+.link-side{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: #343a40;
+}
+
+#search-field{
+  background-color: #343a40;
+  color: green;
+  border-radius: 10px;
+}
+
+#submit{
+  border-radius: 10px;
+}
+
 .sticky {
-  background: black;
+  background: #343a40;
+  z-index: 100;
 }
 
 .fixed {

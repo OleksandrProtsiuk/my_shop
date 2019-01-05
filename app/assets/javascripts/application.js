@@ -13,10 +13,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+// require rails-ujs
 //= require activestorage
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 
 
@@ -26,4 +27,22 @@ $(window).scroll(function(){
 
     if (scroll >= 100) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
+});
+
+$(document).ready(function () {
+    $(location).attr('pathname');
+    $('.link').each(function () {
+        let l = $(this).attr('href');
+        if(l === location.pathname){
+            $(this).toggleClass('text-success');
+        }
+    })
+});
+
+$(document).ready(function () {
+    $('#search').on('submit', function(event) {
+        event.preventDefault();
+        let txt = $('#search-field').val();
+        $('#root').replaceWith($('#results').text(txt).removeAttr('hidden'));
+    });
 });

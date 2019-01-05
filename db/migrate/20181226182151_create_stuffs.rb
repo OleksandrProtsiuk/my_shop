@@ -5,7 +5,7 @@ class CreateStuffs < ActiveRecord::Migration[5.2]
       t.decimal :price
       t.text :short_description
       t.text :full_description
-      t.integer :preview_image
+      t.text :preview_image
       t.boolean :in_stock
       t.string :slug
 
