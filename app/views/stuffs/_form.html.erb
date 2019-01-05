@@ -32,9 +32,10 @@
       <%= form.text_field :old_price, { :class => 'form-control' } %>
     </div>
 
-  <div class="field">
+  <div class="field" >
     <%= form.label :short_description %>
-    <%= form.text_area :short_description, { :class => 'form-control' } %>
+    <small>max len is 120. left: <span id="inputted"></span></small>
+    <%= form.text_area :short_description, { :class => 'form-control', :id => 'short-description' } %>
   </div>
 
   <div class="field">
