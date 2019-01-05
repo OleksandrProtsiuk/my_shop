@@ -40,8 +40,30 @@
   color: whitesmoke;
 }
 
+.h{
+  font-family: UbuntuMono-Regular;
+  text-decoration-color: #343a40;
+}
+
+.link-side{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: #343a40;
+}
+
+#search-field{
+  background-color: #343a40;
+  color: green;
+  border-radius: 10px;
+}
+
+#submit{
+  border-radius: 10px;
+}
+
 .sticky {
   background: #343a40;
+  z-index: 100;
 }
 
 .fixed {

@@ -38,3 +38,11 @@ $(document).ready(function () {
         }
     })
 });
+
+$(document).ready(function () {
+    $('#search').on('submit', function(event) {
+        event.preventDefault();
+        let txt = $('#search-field').val();
+        $('#root').replaceWith($('#results').text(txt).removeAttr('hidden'));
+    });
+});
