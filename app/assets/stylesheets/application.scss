@@ -14,8 +14,28 @@
  */
 @import "bootstrap";
 
+@font-face {
+  font-family: UbuntuMono-Bold;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+
+  font-family: UbuntuMono-Regular;
+  src: url('fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf');
+};
+
+.shop{
+  font-family: UbuntuMono-Bold;
+  font-size: 150px;
+  color: whitesmoke;
+}
+
+.link{
+  font-family: UbuntuMono-Regular;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
 .sticky {
-  background: black;
+  background: #343a40;
 }
 
 .fixed {

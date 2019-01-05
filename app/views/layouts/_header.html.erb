@@ -1,20 +1,34 @@
 
 <header>
   <section class="pt-5 pb-5 bg-dark inner-header">
-    <div class="container">
-      <div class="sticky">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h1 class="mt-0 mb-3 text-white">Тут будет лого... или не будет.</h1>
-          <div class="breadcrumbs">
-            <p class="mb-0 text-white"><%= link_to 'Главная', root_path %>  /
-              <%= link_to 'Доставка', delivery_path %>  /
-              <%= link_to 'Оплата', payment_path %>  /
-              <%= link_to 'О нас', about_path %>  /  <span class="text-success">About</span></p>
+    <div class="row">
+      <div class="col-8 text-center">
+        <h1 class="shop"><%= image_tag('logo.png', alt: 'logo', width: 150) %>LinuxShop</h1>
+
+      <div class="sticky col-md-12">
+          <div class="breadcrumbs text-center">
+            <p class="mb-0 link">
+              PC:~$
+              <%= link_to 'Главная', root_path, { class: 'link' } %>  /
+              <%= link_to 'Доставка', delivery_path, { class: 'link' } %>  /
+              <%= link_to 'Оплата', payment_path, { class: 'link' } %>  /
+              <%= link_to 'О нас', about_path, { class: 'link' } %>  /
+              <%= link_to 'Корзина', stuffs_path, { class: 'link' } %>(0)
+              <span class="text-success">test</span></p>
           </div>
         </div>
       </div>
+
+      <div class="col-4 text-left link">
+        <p>Телефон: +380631234578<br>
+        Email: my_shop@example.com</p>
+        <form id="search" class="form-inline my-2 my-lg-0">
+          <input type="text" id="search-field" placeholder="search" class="form-control">
+          <p>&nbsp</p>
+          <button class="btn btn-dark">Найти</button>
+        </form>
       </div>
+
     </div>
   </section>
 </header>
