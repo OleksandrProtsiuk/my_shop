@@ -69,6 +69,6 @@ class StuffsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stuff_params
-      params.require(:stuff).permit(:title, :price, :short_description, :full_description, :preview_image, :in_stock, :slug)
+      params.require(:stuff).permit(:title, :price, :old_price, :short_description, :full_description, :preview_image, :in_stock, :slug)
     end
 end

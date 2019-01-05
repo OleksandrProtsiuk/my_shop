@@ -1,39 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-5">
+    <%= render 'karusel' %>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @stuff.title %>
-</p>
+  <div class="col-6">
+    <h3 class="h"><%= @stuff.title %></h3>
+    <br>
+    <p class="price">
+      <% if @stuff.old_price %>
+       <span class="discount text-muted"><%= @stuff.old_price %> UAH</span>
+      <% end %>
+      <%= @stuff.price %> UAH</p><br>
+    <% if @stuff.in_stock %>
+      <p class="in-stock">Есть в наличии / <%= link_to 'Добавить в корзину', root_path, { :class => 'in-stock' } %></p>
+      <% else %>
+        <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
+    <% end %>
+    <p><%= @stuff.full_description %></p>
+    <% if true %>
+      <hr>
+      <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
+      <%= link_to 'Back', stuffs_path %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @stuff.price %>
-</p>
-
-<p>
-  <strong>Short description:</strong>
-  <%= @stuff.short_description %>
-</p>
-
-<p>
-  <strong>Full description:</strong>
-  <%= @stuff.full_description %>
-</p>
-
-<p>
-  <strong>Preview image:</strong>
-  <%= @stuff.preview_image %>
-</p>
-
-<p>
-  <strong>In stock:</strong>
-  <%= @stuff.in_stock %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @stuff.slug %>
-</p>
-
-<%= link_to 'Edit', edit_stuff_path(@stuff) %> |
-<%= link_to 'Back', stuffs_path %>

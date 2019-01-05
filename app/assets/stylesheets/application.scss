@@ -45,6 +45,30 @@
   text-decoration-color: #343a40;
 }
 
+.price{
+  font-family: UbuntuMono-Bold;
+  font-size: 50px;
+  color: green;
+}
+
+.discount{
+  font-family: UbuntuMono-Bold;
+  text-decoration: line-through;
+  font-size: 30px;
+}
+
+.in-stock{
+  font-family: UbuntuMono-Regular;
+  font-size: 25px;
+  color: green;
+}
+
+.not-in-stock{
+  font-family: UbuntuMono-Regular;
+  font-size: 25px;
+  color: darkred;
+}
+
 .link-side{
   font-family: UbuntuMono-Regular;
   font-size: 20px;

@@ -1,3 +1,9 @@
+
+<div class="row">
+<div class="col-3">
+  <p>&nbsp</p>
+</div>
+<div class="col-6 h">
 <%= form_with(model: stuff, local: true) do |form| %>
   <% if stuff.errors.any? %>
     <div id="error_explanation">
@@ -13,40 +19,43 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, { :class => 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, { :class => 'form-control' } %>
   </div>
 
-  <div class="field">
+    <div class="field">
+      <%= form.label :old_price %>
+      <%= form.text_field :old_price, { :class => 'form-control' } %>
+    </div>
+
+  <div class="field" >
     <%= form.label :short_description %>
-    <%= form.text_area :short_description %>
+    <small>max len is 120. left: <span id="inputted"></span></small>
+    <%= form.text_area :short_description, { :class => 'form-control', :id => 'short-description' } %>
   </div>
 
   <div class="field">
     <%= form.label :full_description %>
-    <%= form.text_area :full_description %>
+    <%= form.text_area :full_description, { :class => 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :preview_image %>
-    <%= form.text_field :preview_image %>
+    <%= form.text_field :preview_image, { :class => 'form-control' } %>
   </div>
 
   <div class="field">
     <%= form.label :in_stock %>
-    <%= form.check_box :in_stock %>
+    <%= form.check_box :in_stock, { :class => 'form-control' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :slug %>
     <%= form.text_field :slug %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <div class="actions"><%= form.submit({ :class => 'btn btn-warning'}) %></div>
 <% end %>
+</div>
+</div>
