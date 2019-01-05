@@ -46,3 +46,9 @@ $(document).ready(function () {
         $('#root').replaceWith($('#results').text(txt).removeAttr('hidden'));
     });
 });
+
+$(document).ready(function(){
+    let pt1 = 'my_js_shop';
+    let pt2 = 'example.com';
+    $('#mail').text(pt1 + '@' + pt2);
+});
