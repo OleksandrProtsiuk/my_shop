@@ -19,7 +19,7 @@
     <% end %>
     <p><%= @stuff.full_description %></p>
     <p><%= @stuff.tag_list %></p>
-    <% if true %>
+    <% if http_basic_authenticate_with %>
       <hr>
       <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
       <%= link_to 'Back', stuffs_path %>
