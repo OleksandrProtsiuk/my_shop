@@ -18,6 +18,7 @@
         <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
     <% end %>
     <p><%= @stuff.full_description %></p>
+    <p><%= @stuff.tag_list %></p>
     <% if true %>
       <hr>
       <%= link_to 'Edit', edit_stuff_path(@stuff) %> |

@@ -48,10 +48,20 @@
     <%= form.text_field :preview_image, { :class => 'form-control' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :in_stock %>
-    <%= form.check_box :in_stock, { :class => 'form-control' } %>
+  <div class="inline field">
+    <p>In stock<%= form.check_box :in_stock, { :class => 'form-control' } %></p>
   </div>
+
+    <div class="field">
+      <%= form.label 'category' %>
+      <%= form.select :category_id, category_names_ids, {}, { :class => 'select form-control' } %>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :tag_list %>
+      <%= form.text_field :tag_list, { :class => 'form-control' }  %>
+    </div>
 
     <%= form.text_field :slug %>
 
