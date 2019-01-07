@@ -1,10 +1,12 @@
 class StuffsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "admin", except: :show
   before_action :set_stuff, only: [:show, :edit, :update, :destroy]
 
   # GET /stuffs
   # GET /stuffs.json
   def index
     @stuffs = Stuff.all
+    @categories = Category.all
   end
 
   # GET /stuffs/1

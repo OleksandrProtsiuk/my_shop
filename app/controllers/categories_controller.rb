@@ -3,14 +3,14 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
-  def index
-    @categories = Category.all
-  end
+#  def index
+#    @categories = Category.all
+#  end
 
   # GET /categories/1
   # GET /categories/1.json
-  def show
-  end
+#  def show
+#  end
 
   # GET /categories/new
   def new
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to adnim_path, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to adnim_path, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to adnim_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

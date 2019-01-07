@@ -3,7 +3,7 @@
 //= require activestorage
 //= require_tree .
 
-
+/*  */
 $(document).ready(function () {
     let count = 120 - $('#short-description').val().length;
     $('#inputted').text(count);

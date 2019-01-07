@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'delivery', to: 'static_pages#delivery', as: 'delivery'
   get 'about', to: 'static_pages#about', as: 'about'
 
-  resources :stuffs
+  get 'adnim', to: 'stuffs#index', as: 'adnim'
+  resources :stuffs, exept: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
