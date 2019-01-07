@@ -8,6 +8,7 @@ gem 'bootstrap', '~> 4.2', '>= 4.2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'pg_search', '~> 2.1', '>= 2.1.3'
+gem 'russian', '~> 0.6.0'
 # ---------------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

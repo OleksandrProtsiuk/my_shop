@@ -20,7 +20,7 @@
 // require turbolinks
 //= require_tree .
 
-
+/* header - sticker */
 $(window).scroll(function(){
     var sticky = $('.sticky'),
         scroll = $(window).scrollTop();
@@ -28,7 +28,7 @@ $(window).scroll(function(){
     if (scroll >= 100) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
 });
-
+/* header-links-greener */
 $(document).ready(function () {
     $(location).attr('pathname');
     $('.link').each(function () {
@@ -38,7 +38,7 @@ $(document).ready(function () {
         }
     })
 });
-
+/* search */
 $(document).ready(function () {
     $('#search').on('submit', function(event) {
         event.preventDefault();
@@ -47,8 +47,13 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+
+});
+
+/* mail builder */
 $(document).ready(function(){
     let pt1 = 'my_js_shop';
     let pt2 = 'example.com';
-    $('#mail').text(pt1 + '@' + pt2);
+    $('#mail').text( pt1 +'@' + pt2);
 });

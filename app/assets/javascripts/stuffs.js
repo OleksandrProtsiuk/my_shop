@@ -3,7 +3,7 @@
 //= require activestorage
 //= require_tree .
 
-
+/*  */
 $(document).ready(function () {
     let count = 120 - $('#short-description').val().length;
     $('#inputted').text(count);
@@ -16,6 +16,13 @@ $(document).ready(function () {
         }else{
             $('#inputted').text(res).css({'color': 'black'});
         }
-        console.log(count + '-' + currentCount + '=' +res);
+        /* console.log(count + '-' + currentCount + '=' +res); */
     })
+});
+
+$(document).ready(function () {
+   $('#stuff_tag_list').on('focus', function () {
+       let category = $('#stuff_category_id option:selected').text();
+       $(this).val( category + ', ');
+   })
 });

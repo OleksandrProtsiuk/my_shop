@@ -3,4 +3,8 @@ class Stuff < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :short_description, presence: true, length: { maximum: 120 }
+
+  def to_param
+    slug
+  end
 end

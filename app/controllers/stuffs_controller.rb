@@ -1,10 +1,12 @@
 class StuffsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "admin", except: :show
   before_action :set_stuff, only: [:show, :edit, :update, :destroy]
 
   # GET /stuffs
   # GET /stuffs.json
   def index
     @stuffs = Stuff.all
+    @categories = Category.all
   end
 
   # GET /stuffs/1
@@ -25,6 +27,7 @@ class StuffsController < ApplicationController
   # POST /stuffs.json
   def create
     @stuff = Stuff.new(stuff_params)
+    @stuff.slug = slugger(@stuff.title)
 
     respond_to do |format|
       if @stuff.save
@@ -42,6 +45,8 @@ class StuffsController < ApplicationController
   def update
     respond_to do |format|
       if @stuff.update(stuff_params)
+         @stuff.slug = slugger(@stuff.title)
+         @stuff.update(stuff_params)
         format.html { redirect_to @stuff, notice: 'Stuff was successfully updated.' }
         format.json { render :show, status: :ok, location: @stuff }
       else
@@ -64,11 +69,16 @@ class StuffsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stuff
-      @stuff = Stuff.find(params[:id])
+      @stuff = Stuff.find_by_slug(params[:slug])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stuff_params
-      params.require(:stuff).permit(:title, :price, :old_price, :short_description, :full_description, :preview_image, :in_stock, :slug)
+      params.require(:stuff).permit(:title, :price, :old_price, :short_description, :full_description,
+                                    :preview_image, :in_stock, :slug, :tag_list)
+    end
+
+    def slugger(title)
+      Russian.translit(title).parameterize.truncate(80, omission: '')
     end
 end

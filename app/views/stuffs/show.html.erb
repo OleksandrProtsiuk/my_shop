@@ -18,11 +18,12 @@
         <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
     <% end %>
     <p><%= @stuff.full_description %></p>
-    <% if true %>
+    <p><%= @stuff.tag_list %></p>
+   <div hidden>
       <hr>
       <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
       <%= link_to 'Back', stuffs_path %>
-    <% end %>
+  </div>
   </div>
 </div>
 
