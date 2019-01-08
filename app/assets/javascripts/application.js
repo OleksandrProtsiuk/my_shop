@@ -19,6 +19,10 @@
 //= require activestorage
 // require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require activestorage
+//= require_tree .
 
 /* header - sticker */
 $(window).scroll(function(){
@@ -48,7 +52,11 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    let options = {
+        data: ["blue", "green", "pink", "red", "yellow"]
+    };
 
+    /* $('#searchField').easyAutocomplete(options); */
 });
 
 /* mail builder */
@@ -56,4 +64,14 @@ $(document).ready(function(){
     let pt1 = 'my_js_shop';
     let pt2 = 'example.com';
     $('#mail').text( pt1 +'@' + pt2);
+});
+
+/* hide - show short-description */
+$(document).ready(function () {
+   $('.card').on('mouseover', function () {
+       $('#description').removeAttr('hidden');
+   });
+       $('#description').on('mouseleave', function () {
+           $('#description').setAttribute('hidden', 'hidden');
+   });
 });

@@ -11,11 +11,18 @@
           </div>
         <div class="card-body">
             <h5 class="card-title"><%= stuff.title %></h5>
-            <p class="card-text"><%= stuff.short_description %></p>
-            <p class="card-text"><%= stuff.price %> UAH</p>
+              <div id="description" hidden>
+                <p class="card-text"><%= stuff.short_description %></p>
+              </div>
+          <div class="card-text">
+            <% if stuff.old_price %>
+              <span class="discount-small text-muted"><%= stuff.old_price %> UAH</span>
+            <% end %>
+            <span class="price-small">   <%= stuff.price %> UAH</span>
+          </div>
+
         </div>
         </div>
-        <p>&nbsp</p>
     </div>
   <% end %>
 </div>
