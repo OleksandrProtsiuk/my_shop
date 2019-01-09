@@ -5,6 +5,7 @@
     <a class="nav-item nav-link active" id="nav-stuff-tab" data-toggle="tab" href="#nav-stuff" role="tab" aria-controls="nav-stuff" aria-selected="true"><h5 class="h">stuff</h5></a>
     <a class="nav-item nav-link" id="nav-categories-tab" data-toggle="tab" href="#nav-categories" role="tab" aria-controls="nav-categories" aria-selected="false"><h5 class="h">categories</h5></a>
     <a class="nav-item nav-link" id="nav-settings-tab" data-toggle="tab" href="#nav-settings" role="tab" aria-controls="nav-settings" aria-selected="false"><h5 class="h">settings</h5></a>
+    <a class="nav-item nav-link" id="nav-comments-tab" data-toggle="tab" href="#nav-comments" role="tab" aria-controls="nav-comments" aria-selected="false"><h5 class="h">comments</h5></a>
   </div>
 </nav>
 
@@ -39,7 +40,7 @@
     </table>
     <hr>
 
-    <%= link_to 'Add New Stuff', new_stuff_path %>
+    <%= link_to 'Add New Stuff', new_stuff_path, { :class => 'btn btn-warning'} %>
   </div>
 
   <div class="tab-pane fade" id="nav-categories" role="tabpanel" aria-labelledby="nav-categories-tab">
@@ -48,6 +49,10 @@
 
   <div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">
     here lies settings of myShop...
+  </div>
+
+  <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">
+    <%= render 'comments/index' %>
   </div>
 
 </div>

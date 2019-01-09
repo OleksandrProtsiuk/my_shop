@@ -7,16 +7,19 @@ class StuffsController < ApplicationController
   def index
     @stuffs = Stuff.all
     @categories = Category.all
+    @comments = Comment.all
   end
 
   # GET /stuffs/1
   # GET /stuffs/1.json
   def show
+    @comments = Comment.where(stuff_id: @stuff.id).order(created_at: :desc)
   end
 
   # GET /stuffs/new
   def new
     @stuff = Stuff.new
+    @comment = Comment.new
   end
 
   # GET /stuffs/1/edit

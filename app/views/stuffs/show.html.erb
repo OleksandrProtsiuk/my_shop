@@ -5,7 +5,8 @@
   </div>
 
   <div class="col-6">
-    <h3 class="h"><%= @stuff.title %></h3>
+    <h2 class="h"><%= @stuff.title %></h2>
+    <small class="h"><%= @stuff.tag_list %></small>
     <br>
     <p class="price">
       <% if @stuff.old_price %>
@@ -18,7 +19,6 @@
         <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
     <% end %>
     <p><%= @stuff.full_description.html_safe %></p>
-    <p><%= @stuff.tag_list %></p>
    <div hidden>
       <hr>
       <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
@@ -27,3 +27,32 @@
   </div>
 </div>
 
+<div class="container">
+  <hr>
+<h4 class="h">Последние просмотренные:</h4>
+
+</div>
+
+<div class="container">
+  <hr>
+  <h4 class="h">Покупатели, которые просматривали данный товар, также интересуются:</h4>
+
+</div>
+
+<div class="container">
+  <hr>
+  <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
+    <% @comments.each do |comment| %>
+      <% if comment.status %>
+        <div class="h">
+          <p><strong>Счастливый покупатель <%= comment.username %></strong><small><%= comment.updated_at %></small></p>
+          <span>Оценил товар на <%= comment.rate %> звёзд</span>
+          <p><%= comment.body.html_safe %></p>
+          <hr>
+        </div>
+      <% end %>
+    <% end %>
+</div>
+<div class="container">
+  <%= render 'stuffs/comment_form', comment: @comment %>
+</div>
