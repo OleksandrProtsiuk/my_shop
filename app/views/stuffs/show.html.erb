@@ -17,7 +17,7 @@
       <% else %>
         <p class="not-in-stock">Нет в наличии / <%= link_to 'Сообщить о поступлении', root_path, { :class => 'not-in-stock' } %></p>
     <% end %>
-    <p><%= @stuff.full_description %></p>
+    <p><%= @stuff.full_description.html_safe %></p>
     <p><%= @stuff.tag_list %></p>
    <div hidden>
       <hr>

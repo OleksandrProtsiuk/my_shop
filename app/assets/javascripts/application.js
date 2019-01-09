@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require easy-autocomplete
+//= require trix
 // require rails-ujs
 //= require activestorage
 // require turbolinks
