@@ -64,12 +64,12 @@ $(document).ready(function(){
 
 /* hide - show short-description */
 $(document).ready(function () {
-  $('.card').hover(
-      function () {
-          $('#description').removeAttr('hidden').show();
-      },
-      function () {
-          $('#description').hide().setAttribute('hidden', 'hidden');
-      }
-  )
+    $('[id=card]').hover(
+        function () {
+            $('#description').css('display', 'block');
+        },
+        function () {
+            $('#description').css('display', 'none');
+        }
+    )
 });
