@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require easy-autocomplete
 // require rails-ujs
 //= require activestorage
 // require turbolinks
@@ -49,10 +50,16 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let options = {
-        data: ["blue", "green", "pink", "red", "yellow"]
+        data: ["blue", "green", "pink", "red", "yellow"],
+
+        list: {
+            match: {
+                enabled: true
+            }
+        }
     };
 
-    /* $('#searchField').easyAutocomplete(options); */
+    $('#searchField').easyAutocomplete(options);
 });
 
 /* mail builder */
