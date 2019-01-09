@@ -3,7 +3,7 @@
 //= require activestorage
 //= require_tree .
 
-/*  */
+/* short-descr counter */
 $(document).ready(function () {
     let count = 120 - $('#short-description').val().length;
     $('#inputted').text(count);
@@ -19,7 +19,7 @@ $(document).ready(function () {
         /* console.log(count + '-' + currentCount + '=' +res); */
     })
 });
-
+/* auto-add category to tags */
 $(document).ready(function () {
    $('#stuff_tag_list').on('focus', function () {
        let category = $('#stuff_category_id option:selected').text();

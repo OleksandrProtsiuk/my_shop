@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require easy-autocomplete
 // require rails-ujs
 //= require activestorage
 // require turbolinks
@@ -48,7 +49,17 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    let options = {
+        data: ["blue", "green", "pink", "red", "yellow"],
 
+        list: {
+            match: {
+                enabled: true
+            }
+        }
+    };
+
+    $('#searchField').easyAutocomplete(options);
 });
 
 /* mail builder */
@@ -56,4 +67,16 @@ $(document).ready(function(){
     let pt1 = 'my_js_shop';
     let pt2 = 'example.com';
     $('#mail').text( pt1 +'@' + pt2);
+});
+
+/* hide - show short-description */
+$(document).ready(function () {
+    $('[id=card]').hover(
+        function () {
+            $('#description').css('display', 'block');
+        },
+        function () {
+            $('#description').css('display', 'none');
+        }
+    )
 });
