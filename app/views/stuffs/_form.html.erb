@@ -40,7 +40,7 @@
 
   <div class="field">
     <%= form.label :full_description %>
-    <%= form.text_area :full_description, { :class => 'form-control' } %>
+    <%= form.trix_editor :full_description, required: true, autofocus: true  %>
   </div>
 
   <div class="field">

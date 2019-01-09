@@ -9,6 +9,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'pg_search', '~> 2.1', '>= 2.1.3'
 gem 'russian', '~> 0.6.0'
+gem 'trix-rails', '~> 2.0', require: 'trix'
 # ---------------------------
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

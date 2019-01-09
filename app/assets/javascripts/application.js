@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require easy-autocomplete
+//= require trix
 // require rails-ujs
 //= require activestorage
 // require turbolinks
@@ -39,27 +40,30 @@ $(document).ready(function () {
         }
     })
 });
+/* autocomplete */
+$(document).ready(function () {
+    let options = {
+        data: ['red', 'yellow', 'dildo'],
+        /* getValue: "title", */
+        list: {
+            match: {
+                enabled: true
+            },
+            onClickEvent: function() {
+                let q = $('#search-field').val();
+                console.log(q);
+                $('#root').replaceWith($('#results').text(q).removeAttr('hidden'));
+        }}
+    };
+    $('#searchField').easyAutocomplete(options);
+});
 /* search */
 $(document).ready(function () {
     $('#search').on('submit', function(event) {
         event.preventDefault();
-        let txt = $('#search-field').val();
-        $('#root').replaceWith($('#results').text(txt).removeAttr('hidden'));
+        let txxt = $('#search-field').val();
+        $('#root').replaceWith($('#results').text(txxt).removeAttr('hidden'));
     });
-});
-
-$(document).ready(function () {
-    let options = {
-        data: ["blue", "green", "pink", "red", "yellow"],
-
-        list: {
-            match: {
-                enabled: true
-            }
-        }
-    };
-
-    $('#searchField').easyAutocomplete(options);
 });
 
 /* mail builder */
