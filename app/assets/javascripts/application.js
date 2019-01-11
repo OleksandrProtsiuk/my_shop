@@ -40,7 +40,26 @@ $(document).ready(function () {
         }
     })
 });
-
+/* autocomplete */
+$(document).ready(function () {
+    let options = {
+        url: 'http://0.0.0.0:3000/search/auto_title.json',
+        getValue: "title",
+        list: {
+            match: {
+                enabled: true
+            }}
+    };
+    $('#searchField').easyAutocomplete(options);
+});
+/* search
+$(document).ready(function () {
+    $('#search').on('submit', function(event) {
+        event.preventDefault();
+        let txxt = $('#search-field').val();
+        $('#root').replaceWith($('#results').text(txxt).removeAttr('hidden'));
+    });
+}); */
 
 /* mail builder */
 $(document).ready(function(){

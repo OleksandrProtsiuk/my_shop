@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'search/results'
+  get '/search/auto_title'
+
   resources :categories
   root 'static_pages#home', as: 'root'
 
