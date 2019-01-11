@@ -1,0 +1,7 @@
+
+<form id="search" class="col-10">
+  <!-- input type="text" id="searchField" placeholder="search" class="form-control" autocomplete="on"-->
+  <%= form_tag('search/results', method: 'get', remote: true) do %>
+    <input id="searchField" placeholder="search" class="form-control" autocomplete="on" <%= text_field_tag :search_field %>
+  <% end %>
+</form>

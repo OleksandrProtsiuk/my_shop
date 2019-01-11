@@ -40,31 +40,7 @@ $(document).ready(function () {
         }
     })
 });
-/* autocomplete */
-$(document).ready(function () {
-    let options = {
-        data: ['red', 'yellow', 'dildo'],
-        /* getValue: "title", */
-        list: {
-            match: {
-                enabled: true
-            },
-            onClickEvent: function() {
-                let q = $('#search-field').val();
-                console.log(q);
-                $('#root').replaceWith($('#results').text(q).removeAttr('hidden'));
-        }}
-    };
-    $('#searchField').easyAutocomplete(options);
-});
-/* search */
-$(document).ready(function () {
-    $('#search').on('submit', function(event) {
-        event.preventDefault();
-        let txxt = $('#search-field').val();
-        $('#root').replaceWith($('#results').text(txxt).removeAttr('hidden'));
-    });
-});
+
 
 /* mail builder */
 $(document).ready(function(){

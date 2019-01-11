@@ -1,0 +1,23 @@
+
+<p>label test</p>
+<p>
+
+</p>
+
+<div class="container">
+  <% if @res %>
+    <h3>Search results: <%= @res.length %></h3>
+    <% @res.reverse_each do |stuff| %>
+      <div class="card">
+        <h2 class="card-title"><%= link_to stuff.title, stuff_path(stuff) %></h2>
+        <div class="card-body">
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="alert-notice">
+      <p>No results found</p>
+    </div>
+  <% end %>
+</div>
+
