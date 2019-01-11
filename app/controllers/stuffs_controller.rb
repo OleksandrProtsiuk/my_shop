@@ -14,6 +14,7 @@ class StuffsController < ApplicationController
   # GET /stuffs/1.json
   def show
     @comments = Comment.where(stuff_id: @stuff.id).order(created_at: :desc)
+    session[:stuff_id]  = @stuff.id
   end
 
   # GET /stuffs/new
