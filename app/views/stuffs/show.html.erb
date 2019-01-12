@@ -41,9 +41,9 @@
 
 <div class="container">
   <hr>
-  <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
     <% @comments.each do |comment| %>
       <% if comment.status %>
+      <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
         <div class="h">
           <p><strong>Счастливый покупатель <%= comment.username %></strong>  <small><%= comment.updated_at %></small></p>
           <span>Оценил товар на <%= comment.rate %> звёзд</span>

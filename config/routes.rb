@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'adnim', to: 'stuffs#index', as: 'adnim'
   resources :stuffs, exept: [:index] , param: :slug
+  get '/tagged', to: 'stuffs#tagged', as: :tagged
   resources :comments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

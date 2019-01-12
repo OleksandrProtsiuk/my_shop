@@ -70,6 +70,10 @@ class StuffsController < ApplicationController
     end
   end
 
+  def tagged
+    @stuff = Stuff.tagged_with(params[:tag])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stuff
