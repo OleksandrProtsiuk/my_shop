@@ -14,6 +14,7 @@ class StuffsController < ApplicationController
   # GET /stuffs/1.json
   def show
     @comments = Comment.where(stuff_id: @stuff.id).order(created_at: :desc)
+    session[:stuff_id]  = @stuff.id
   end
 
   # GET /stuffs/new
@@ -67,6 +68,10 @@ class StuffsController < ApplicationController
       format.html { redirect_to stuffs_url, notice: 'Stuff was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def tagged
+    @stuff = Stuff.tagged_with(params[:tag])
   end
 
   private

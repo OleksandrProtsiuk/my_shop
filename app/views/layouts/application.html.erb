@@ -21,10 +21,11 @@
           <%= yield %>
       </div>
 
-      <div class="col-8" id="results" hidden></div>
-
+      <div class="col-9" id="results" style="display: none;">
+          <%= render 'search/results' %>
+        <h1 class="shop" style="color: black;">Check</h1>
+      </div>
     </div>
-
     <%= render 'layouts/footer' %>
   </body>
 </html>

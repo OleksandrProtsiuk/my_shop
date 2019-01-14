@@ -43,36 +43,30 @@ $(document).ready(function () {
 /* autocomplete */
 $(document).ready(function () {
     let options = {
-        data: ['red', 'yellow', 'dildo'],
-        /* getValue: "title", */
+        url: 'http://0.0.0.0:3000/search/auto_title.json', /* not correct */
+        getValue: "title",
         list: {
             match: {
                 enabled: true
-            },
-            onClickEvent: function() {
-                let q = $('#search-field').val();
-                console.log(q);
-                $('#root').replaceWith($('#results').text(q).removeAttr('hidden'));
-        }}
+            }
+        }
     };
     $('#searchField').easyAutocomplete(options);
 });
 /* search */
 $(document).ready(function () {
-    $('#search').on('submit', function(event) {
+    $('#search').on('submit', function (event) {
         event.preventDefault();
-        let txxt = $('#search-field').val();
-        $('#root').replaceWith($('#results').text(txxt).removeAttr('hidden'));
+        $('#root').replaceWith($('#results').css('display', 'block'));
+        $('#searchButton').css('display', 'none');
     });
 });
-
 /* mail builder */
 $(document).ready(function(){
     let pt1 = 'my_js_shop';
     let pt2 = 'example.com';
     $('#mail').text( pt1 +'@' + pt2);
 });
-
 /* hide - show short-description */
 $(document).ready(function () {
     $('[id=card]').hover(

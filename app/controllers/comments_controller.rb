@@ -15,6 +15,10 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /comments/1/edit
@@ -30,9 +34,11 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -56,7 +62,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to adnim_path, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

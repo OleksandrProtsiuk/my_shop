@@ -41,11 +41,11 @@
 
 <div class="container">
   <hr>
-  <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
     <% @comments.each do |comment| %>
       <% if comment.status %>
+      <h4 class="h">Отзывы о товаре <%= @stuff.title %>:</h4>
         <div class="h">
-          <p><strong>Счастливый покупатель <%= comment.username %></strong><small><%= comment.updated_at %></small></p>
+          <p><strong>Счастливый покупатель <%= comment.username %></strong>  <small><%= comment.updated_at %></small></p>
           <span>Оценил товар на <%= comment.rate %> звёзд</span>
           <p><%= comment.body.html_safe %></p>
           <hr>
@@ -53,6 +53,9 @@
       <% end %>
     <% end %>
 </div>
-<div class="container">
-  <%= render 'stuffs/comment_form' %>
+<div id="commentLink" class="container">
+  <%= link_to 'Оставить отзыв', new_comment_path, remote: true, class: 'link-side'%>
+</div>
+<div class="col-6 comment" id="commentAdded" style="display: none;">
+  <h3>Отзыв отправлен на модерацию.</h3>
 </div>
